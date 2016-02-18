@@ -1,8 +1,16 @@
 /* main */
 
+* {
+    font-family: Sans-serif;
+}
+
+header {
+    border-bottom: 2px solid blue;
+}
+
 h1 {
     display: inline-block;
-    font-family: Sans-serif;
+    color: #597ACE;
 }
 
 #logSection {
@@ -20,10 +28,11 @@ button {
 aside {
     width: 25%;
     float: left;
+    background-color: #E3E5E8;
 }
 
 section {
-    width: 30%;
+    width: 40%;
     float: left;
     margin-left: 20%;
     margin-top: 10%;
@@ -33,6 +42,24 @@ section {
     border-bottom: 1px solid gray;
 }
 
-. {
-    margin: 2px;
+#create, 
+#join {
+    width: 175px;
+    height: 50px;
+    font-size: 20px;
+    margin-right: 50px;
+    background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(30,87,153,0.03) 4%, rgba(41,137,216,0.42) 50%, rgba(30,87,153,0.75) 90%, rgba(30,87,153,0.8) 96%, rgba(30,87,153,0) 100%);
+    background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.03) 4%,rgba(41,137,216,0.42) 50%,rgba(30,87,153,0.75) 90%,rgba(30,87,153,0.8) 96%,rgba(30,87,153,0) 100%);
+    background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(30,87,153,0.03) 4%,rgba(41,137,216,0.42) 50%,rgba(30,87,153,0.75) 90%,rgba(30,87,153,0.8) 96%,rgba(30,87,153,0) 100%);
+
 }
+
+footer {
+    width: 100%;
+    display: inline-block;
+    height: 100px;
+    margin-top: 10px;
+    border-top: 2px solid blue;
+    background-color: #4765AC;
+}
+
