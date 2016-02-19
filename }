@@ -64,35 +64,23 @@ section {
     background: -ms-linear-gradient(top, #3498db, #2980b9);
     background: -o-linear-gradient(top, #3498db, #2980b9);
     background: linear-gradient(to bottom, #3498db, #2980b9);
-    border: none;
-    box-shadow: 0 9px #154F75;
+    border-top: 0;
+    border-top: none;
+    border-right: none;
+    border-left: solid 2px #2980b9;
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-left-color: rgb(41, 128, 185);
+/*    border-bottom: solid 4px black;*/
+    box-shadow: 0 9px #999;
     color: white;
     margin-top: 0px;
 }
 
-#join:hover,
-#create:hover {
-    background: -webkit-linear-gradient(top, #5AB0EA, #3498db);
-    background: -moz-linear-gradient(top, #5AB0EA, #3498db);
-    background: -ms-linear-gradient(top, #5AB0EA, #3498db);
-    background: -o-linear-gradient(top, #5AB0EA, #3498db);
-    background: linear-gradient(to bottom, #5AB0EA, #3498db);
-    box-shadow: 0 9px #2980B9;
-}
-
-#join:active,
 #create:active {
-    box-shadow: 0 4px #154F75;
+    box-shadow: 0 4px #999;
     transform: translateY(4px);
-    margin-right: 50px;
-    background: -webkit-linear-gradient(top, #3498db, #2980b9);
-    background: -moz-linear-gradient(top, #3498db, #2980b9);
-    background: -ms-linear-gradient(top, #3498db, #2980b9);
-    background: -o-linear-gradient(top, #3498db, #2980b9);
-    background: linear-gradient(to bottom, #3498db, #2980b9);
-
 }
-
 
 footer {
     width: 100%;
