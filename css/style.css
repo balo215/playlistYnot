@@ -103,3 +103,18 @@ footer {
     background-color: #4765AC;
 }
 
+#signupForm {
+   text-align: center; 
+}
+
+#reasons {
+    margin: 10px;
+    border-right: solid 1px gray;
+    width: 38%;
+    padding: 55px;
+}
+
+#signUpSection {
+    width: 30%;
+    margin-left:10%;
+}
