@@ -117,4 +117,7 @@ footer {
 #signUpSection {
     width: 30%;
     margin-left:10%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px 15px #FB9C2E;
+    background-color: #D7E0E8;
 }
