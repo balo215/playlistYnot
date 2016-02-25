@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title>Playlist... Y not?</title>
+        <meta charset="UTF-8" /> 
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div id="container">
+        <header>
+            <h2>Tittle</h2>
+        </header>
+        <aside id="videoSection">
+            <div> 
+                <iframe width="336" height="252"
+                    src="http://www.youtube.com/embed/amZLLYqjyKQ?playlist=8jL2DPylmhE">
+                    <!--El segundo video despues de 'playlist=' sera reemplazado con JS para de esta manera
+                        dinamicamente ir agregando videos con la API de youtube -->
+                </iframe>
+            </div>
+            <div id="queuedVideos">
+                <img src="thumbnail.jpg"> <label><strong> Video tittle </strong></label> 
+            </div>
+        </aside>           
+        <section id="searchSection">
+            <input placeholder="Search Something..." id="searchBtn"> </input>
+            <input type="button" value="Search"> 
+            <div id="results">
+                 <img src="thumbnail.jpg"> <label><strong> Video tittle </strong></label> 
+                <!--La linea anterior sera reemplazada con jQuery usando la api de youtube, esto porque
+                    es mas sencillo manipular el objeto que obtenemos al hacer la busqueda del video
+                    asi generamos el thumnail y el titulo automaticamente, solo para ubicarlo dentro del div 
+                -->
+
+            </div>
+        </section>
+        <aside id="chat">
+            <div id="comments">
+                <p>
+                    some stuff to make things looks better anyway nobody reads this, so lets talk about nonsense stuff like some nonimportant stuff
+                </p>
+            </div>
+            <div id="chat">
+                <textarea>
+                </textarea>
+                <input>
+                <input type="button" value="submit" id="submit">
+            </div>
+        </aside>
+        </div>
+    </body>
+
+</html>
