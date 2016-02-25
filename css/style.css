@@ -145,3 +145,19 @@ footer {
     float: left;
     margin-top: 10px;
 }
+
+#searchFields {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#searchInput{
+    border-right: solid 1px red;
+    width: 290px;
+}
+
+#searchBtn {
+    width: 115px;
+    border-radius: 5px;
+    height: 30px;
+}

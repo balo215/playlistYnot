@@ -1,93 +1,55 @@
-/* main */
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title>Playlist... Y not?</title>
+        <meta charset="UTF-8" /> 
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div id="container">
+        <header>
+            <h2>Tittle</h2>
+        </header>
+        <aside id="videoSection">
+            <div> 
+                <iframe width="336" height="252"
+                    src="http://www.youtube.com/embed/amZLLYqjyKQ?playlist=8jL2DPylmhE">
+                    <!--El segundo video despues de 'playlist=' sera reemplazado con JS para de esta manera
+                        dinamicamente ir agregando videos con la API de youtube -->
+                </iframe>
+            </div>
+            <div id="queuedVideos">
+                <img src="thumbnail.jpg"> <label><strong> Video tittle </strong></label> 
+            </div>
+        </aside>           
+        <section id="searchSection">
+            <div id="searchFields"
+                <input placeholder="Search Something..." id="searchInput"> </input>
+                <input type="button" value="Search" id="searchBtn"> 
+            </div>
+            <div id="results">
+                 <img src="thumbnail.jpg"> <label><strong> Video tittle </strong></label> 
+                <!--La linea anterior sera reemplazada con jQuery usando la api de youtube, esto porque
+                    es mas sencillo manipular el objeto que obtenemos al hacer la busqueda del video
+                    asi generamos el thumnail y el titulo automaticamente, solo para ubicarlo dentro del div 
+                -->
 
-* {
-    font-family: Sans-serif;
-}
+            </div>
+        </section>
+        <aside id="chat">
+            <div id="comments">
+                <p>
+                    some stuff to make things looks better anyway nobody reads this, so lets talk about nonsense stuff like some nonimportant stuff
+                </p>
+            </div>
+            <div id="chat">
+                <textarea>
+                </textarea>
+                <input>
+                <input type="button" value="submit" id="submit">
+            </div>
+        </aside>
+        </div>
+    </body>
 
-header {
-    border-bottom: 2px solid blue;
-}
-
-h1 {
-    display: inline-block;
-    color: #597ACE;
-}
-
-#logSection {
-    display: inline-block;
-    float: right;
-    margin-top: 30px;
-    margin-right: 30px;
-}
-
-a.log {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
-    text-decoration: none;
-    color: initial;
-}
-
-button {
-    width: 100px;
-    border-radius: 5px;
-    display: inline-block;
-}
-
-aside {
-    width: 25%;
-    float: left;
-/*    background-color: #E3E5E8;*/
-}
-
-section {
-    width: 40%;
-    float: left;
-    margin-left: 20%;
-    margin-top: 10%;
-}
-
-.genre {
-    border-bottom: 1px solid gray;
-}
-
-#create, 
-#join {
-    border-radius: 10px;
-    width: 175px;
-    height: 50px;
-    font-size: 20px;
-    margin-right: 50px;
-    background: -webkit-linear-gradient(top, #3498db, #2980b9);
-    background: -moz-linear-gradient(top, #3498db, #2980b9);
-    background: -ms-linear-gradient(top, #3498db, #2980b9);
-    background: -o-linear-gradient(top, #3498db, #2980b9);
-    background: linear-gradient(to bottom, #3498db, #2980b9);
-    border-top: 0;
-    border-top: none;
-    border-right: none;
-    border-left: solid 2px #2980b9;
-    border-left-width: 2px;
-    border-left-style: solid;
-    border-left-color: rgb(41, 128, 185);
-/*    border-bottom: solid 4px black;*/
-    box-shadow: 0 9px #999;
-    color: white;
-    margin-top: 0px;
-}
-
-#create:active {
-    box-shadow: 0 4px #999;
-    transform: translateY(4px);
-}
-
-footer {
-    width: 100%;
-    display: inline-block;
-    height: 100px;
-    margin-top: 10px;
-    border-top: 2px solid blue;
-    background-color: #4765AC;
-}
-
+</html>
