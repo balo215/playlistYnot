@@ -4,27 +4,33 @@
         <title>Playlist... Y not?</title>
         <meta charset="UTF-8" /> 
         <link rel="stylesheet" href="css/style.css">
+        <link href="css/css/bootstrap.min.css" rel="stylesheet">
+        
     </head> 
     <body>
         <div id="container">
             <header>
-                <h1>Wanna Make a playlist? Y not!?</h1>
+                <h1 class="label label-success" id="tittle">Wanna Make a playlist? Y not!?</h1>
                 <div id="logSection">
-                    <button id="signUpBtn" href="signUp.html" onclick="location.href='signUp.html';"> Sign up </button>
-                    <button id="lognBtn" href="logIn.html" onclick="location.href='logIn.html';"> Log in </button>
+                    <button id="signUpBtn" href="signUp.html" onclick="location.href='signUp.html';" class="btn btn-success"> Sign up </button>
+                    <button id="lognBtn" href="logIn.html" onclick="location.href='logIn.html';" class="btn btn-success"> Log in </button>
                 </div>
             </header>
             <aside>
-                <div class="genre">
-                    <h3> List tittle </h3>
+                <div class="panel panel-primary">
+                    <div class= "panel-heading">
+                        <h4 class="panel-title"> List tittle </h4>
+                    </div>
                     <ul>
                         <li><a href="#"> electroMusic </a> </li>
                         <li><a href="#"> ejemplo </a> </li> 
                         <li><a href="#"> tutos </a> </li>
                     </ul>
                 </div>
-                <div class="genre">
-                    <h3> List tittle2 </h3>
+                <div class="panel panel-primary">
+                    <div class="panel-heading"> 
+                        <h4 class="panel-title"> List tittle2 </h4>
+                    </div>
                     <ul>
                         <li><a href= "#"> deadmau5 </a> </li>
                         <li><a href="#"> adam k </a> </li> 
@@ -38,7 +44,7 @@
                     <button id="join"> Join </button>
                 </div>
             </section>
-            <footer>
+            <footer id="footer">
                 <span> aqui va el footer </span>
             </footer>
         </div>   
