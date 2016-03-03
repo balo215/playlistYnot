@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>              
-        <title>Playlist... Y not?</title>
-        <meta charset="UTF-8" /> 
-        <link rel="stylesheet" href="css/style.css">
-        <link href="css/css/bootstrap.min.css" rel="stylesheet">
-    </head> 
-    <body>
-        <div id="container">
-            <header>
-                <h1>Wanna Make a playlist? Y not!?</h1>
-            </header>
+<?php 
+    require_once "header.html";
+?>
             <div class="row">
                 <aside id="reasons" class="col-md-5 col-lg-5">
                     <div>
@@ -47,9 +37,8 @@
                     </div>
                 </section>
             </div>
-            <footer>
-                <span> aqui va el footer </span>
-            </footer>
         </div>   
     </body>
-</html>
+<?php
+    require_once "footer.html";
+?>

@@ -1,22 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>              
-        <title>Playlist... Y not?</title>
-        <meta charset="UTF-8" /> 
-        <link rel="stylesheet" href="css/style.css">
-        <link href="css/css/bootstrap.min.css" rel="stylesheet">
-        
-    </head> 
-    <body>
-        <div id="container">
-            <header>
-                <h1 class="label label-success" id="tittle">Wanna Make a playlist? Y not!?</h1>
-                <div id="logSection">
-                    <button id="signUpBtn" href="signUp.html" onclick="location.href='signUp.html';" class="btn btn-success"> Sign up </button>
-                    <button id="lognBtn" href="logIn.html" onclick="location.href='logIn.html';" class="btn btn-success"> Log in </button>
-                </div>
-            </header>
-            <aside>
+<?php
+    require_once "header.html";
+?>
+         <div class="row">   
+            <aside class="col-md-2 col-lg-2">
                 <div class="panel panel-primary">
                     <div class= "panel-heading">
                         <h4 class="panel-title"> List tittle </h4>
@@ -38,15 +24,16 @@
                     </ul>
                 </div>
             </aside>
-            <section>
-                <div>
+            <section class="col-md-6 col-lg-6" id="about">
+                <div id="sectionMain">
                     <button id="create"> Create </button>
                     <button id="join"> Join </button>
                 </div>
             </section>
-            <footer id="footer">
-                <span> aqui va el footer </span>
-            </footer>
+        </div> <!--div row contenido principal -->
+
         </div>   
     </body>
-</html>
+<?php
+    require_once "footer.html";
+?>
