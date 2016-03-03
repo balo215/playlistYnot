@@ -34,6 +34,11 @@ a.log {
     color: initial;
 }
 
+#about {
+    margin-left: 25%;
+    margin-top: 80px;
+}
+
 button {
     width: 100px;
     border-radius: 5px;
@@ -115,7 +120,6 @@ section {
 #reasons {
     margin: 10px;
     border-right: solid 1px gray;
-    width: 38%;
     padding: 55px;
 }
 
