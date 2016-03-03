@@ -1,14 +1,15 @@
 <?php
     include_once "header.html";
 ?>
-    <body>
-        <div id="container">
-        <header>
+    <div class="row">
             <h2>Tittle</h2>
-        </header>
-        <aside id="videoSection">
-            <div> 
-                <iframe width="336" height="252"
+        <aside id="videoSection"  class="col-md-4 col-lg-4">
+            <div class="panel panel-primary"> 
+                <div class= "panel-heading">
+                    <h4 class="panel-title"> Video title </h4>
+                </div>
+
+                <iframe
                     src="http://www.youtube.com/embed/amZLLYqjyKQ?playlist=8jL2DPylmhE">
                     <!--El segundo video despues de 'playlist=' sera reemplazado con JS para de esta manera
                         dinamicamente ir agregando videos con la API de youtube -->
@@ -18,7 +19,7 @@
                 <img src="thumbnail.jpg"> <label><strong> Video tittle </strong></label> 
             </div>
         </aside>           
-        <section id="searchSection">
+        <section id="searchSection" class="col-md-4 col-lg-4">
             <div id="searchFields">
                 <input placeholder="Search Something..." id="searchInput"> </input>
                 <input type="button" value="Search" id="searchBtn" class="btn btn-lg btn-danger"> 
@@ -32,7 +33,7 @@
 
             </div>
         </section>
-        <aside id="chatSection">
+        <aside id="chatSection"  class="col-md-4 col-lg-4">
             <div id="comments">
                 <p>
                     some stuff to make things looks better anyway nobody reads this, so lets talk about nonsense stuff like some nonimportant stuff
@@ -46,6 +47,7 @@
             </div>
         </aside>
         </div>
+    </div>
     </body>
 <?php
     include_once "footer.html";

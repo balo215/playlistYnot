@@ -24,10 +24,15 @@
                     </ul>
                 </div>
             </aside>
-            <section class="col-md-6 col-lg-6" id="about">
-                <div id="sectionMain">
-                    <button id="create" href="plTemplate.php" onclick="location.href='plTemplate.php';"> Create </button>
-                    <button id="join" href="plTemplate.php" onclick="location.href='plTemplate.php';"> Join </button>
+            <section class="col-md-9 col-lg-9">
+                <div>
+                   <h1 id="aboutus">CONTACT US</h1>
+                   <p class="text-primary"> Have a comment or idea to share with us? Send us an e-mail!</p>
+                   <p> contact@playlistynot.com
+                    </p>
+                   <p class="text-primary">We also receive hate mail! We encourage you to be as creative as you can!</p>
+                   <p> keepthehategoing@playlistynot.com</p>
+                   
                 </div>
             </section>
         </div> <!--div row contenido principal -->

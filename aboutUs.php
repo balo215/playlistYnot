@@ -24,7 +24,7 @@
                     </ul>
                 </div>
             </aside>
-            <section class="col-md-9 col-lg-9" id="about">
+            <section class="col-md-9 col-lg-9" >
                 <div>
                    <h1 id="aboutus">About us</h1>
                    <p class="text-primary"> What is YNot? </p>

@@ -3,7 +3,9 @@
 * {
     font-family: Sans-serif;
 }
-
+#container{
+    margin: 0px 2%;
+}
 header {
     border-bottom: 2px solid blue;
     margin-bottom: 10px;
@@ -141,8 +143,16 @@ section {
 /* main page */
 
 #videoSection {
-    width: 30%;
     margin-top: 10px;
+}
+
+iframe{
+    margin: 4px;
+    width: 98%;
+}
+
+#queuedVideos{
+    text-align: center;
 }
 
 #searchSection {
