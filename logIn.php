@@ -1,11 +1,6 @@
 <?php
     include_once "header.html";
 ?>
-    <body>
-        <div id="container">
-            <header>
-                <h1>Wanna Make a playlist? Y not!?</h1>
-            </header>
             <div class="row">
                 <aside class="col-md-2 col-lg-2">
                     <div class="panel panel-primary">
@@ -44,9 +39,8 @@
                     </div>
                 </section>
             </div>
-            <footer id="footer">
-                <span> aqui va el footer </span>
-            </footer>
         </div>   
     </body>
-</html>
+<?php
+    require_once "footer.html";
+?>

@@ -22,7 +22,7 @@ header {
 }
 
 #inputEmail, #inputPwd{
-    width: 200px;
+    width: 98%;
 }
 
 a.log {
