@@ -3,15 +3,27 @@
 * {
     font-family: Sans-serif;
 }
-
+#container{
+    margin: 0px 2%;
+}
 header {
     border-bottom: 2px solid blue;
     margin-bottom: 10px;
 }
 
 #tittle{
+    float:left;
     display: inline-block;
     font-size: 36px;
+}
+
+#buscar {
+    display: inline-block;
+    float: left;
+    margin-top: 30px;
+    margin-left: 170px;
+    padding: 0;
+
 }
 
 #logSection {
@@ -37,11 +49,6 @@ a.log {
 #about {
     margin-left: 25%;
     margin-top: 80px;
-}
-
-#aboutUs {
-    margin-left: 10%;
-    margin-top: 20px;
 }
 
 button {
@@ -146,8 +153,16 @@ section {
 /* main page */
 
 #videoSection {
-    width: 30%;
     margin-top: 10px;
+}
+
+iframe{
+    margin: 4px;
+    width: 98%;
+}
+
+#queuedVideos{
+    text-align: center;
 }
 
 #searchSection {
@@ -291,6 +306,17 @@ section {
     .footer-distributed .footer-left p.footer-links{
         line-height: 1.8;
     }
+
+    #buscar{
+        float:left;
+        clear:both;
+        margin-left:0;
+    }
+
+    #logSection{
+        float: left;
+        padding-bottom: 5px;
+    }
 /*=======
     height: 100px;
     margin-top: 10px;
@@ -374,3 +400,5 @@ section {
     width: 115px;
 >>>>>>> 7b49c1834f4aced42d78ae305df58c0473b6bc38
 }*/
+
+}
