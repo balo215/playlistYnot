@@ -1,0 +1,262 @@
+/* main */
+html{
+    height: 100%;
+}
+
+* {
+    font-family: Sans-serif;
+}
+body{
+    height: 100%;
+}
+#container{
+    margin: 0px 2%;
+    min-height: 68%;
+    
+}
+header {
+    border-bottom: 2px solid blue;
+    margin-bottom: 10px;
+}
+
+#buscar{
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#tittle{
+    display: inline-block;
+    font-size: 36px;
+}
+
+#logSection {
+    display: inline-block;
+    float: right;
+    margin-top: 30px;
+    margin-right: 30px;
+}
+
+#inputEmail, #inputPwd{
+    width: 98%;
+}
+
+a.log {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+
+#about {
+    margin-left: 25%;
+    margin-top: 80px;
+}
+
+button {
+    width: 100px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.genre {
+    border-bottom: 1px solid gray;
+}
+
+#create, 
+#join {
+    border-radius: 10px;
+    width: 175px;
+    height: 50px;
+    font-size: 20px;
+    margin-right: 50px;
+    background: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background: -moz-linear-gradient(top, #3498db, #2980b9);
+    background: -ms-linear-gradient(top, #3498db, #2980b9);
+    background: -o-linear-gradient(top, #3498db, #2980b9);
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+    border: none;
+    box-shadow: 0 9px #154F75;
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 12px;
+}
+
+#join:hover,
+#create:hover {
+    background: -webkit-linear-gradient(top, #5AB0EA, #3498db);
+    background: -moz-linear-gradient(top, #5AB0EA, #3498db);
+    background: -ms-linear-gradient(top, #5AB0EA, #3498db);
+    background: -o-linear-gradient(top, #5AB0EA, #3498db);
+    background: linear-gradient(to bottom, #5AB0EA, #3498db);
+    box-shadow: 0 9px #2980B9;
+}
+
+#join:active,
+#create:active {
+    box-shadow: 0 4px #154F75;
+    transform: translateY(4px);
+    margin-right: 50px;
+    background: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background: -moz-linear-gradient(top, #3498db, #2980b9);
+    background: -ms-linear-gradient(top, #3498db, #2980b9);
+    background: -o-linear-gradient(top, #3498db, #2980b9);
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+
+}
+
+
+
+#signupForm {
+   text-align: center; 
+}
+
+#reasons {
+    margin: 10px;
+    border-right: solid 1px gray;
+    padding: 55px;
+}
+
+.signUpSection {
+    width: 47%;
+    margin-left:10%;
+    border-radius: 5px;
+    border: 1px blue;
+    border-radius: 3px;
+    background-color: #D7E0E8;
+}
+
+#login {
+    padding: 25px;
+}
+
+
+/* main page */
+
+#videoSection {
+    margin-top: 10px;
+}
+
+iframe{
+    margin: 4px;
+    width: 98%;
+}
+
+#queuedVideos{
+    text-align: center;
+}
+
+#searchSection {
+    width: 30%;
+    margin-left: 3%;
+    margin-top: 10px;
+    border-left: solid 1px gray;
+    padding: 5px;
+    height: 300px;
+}
+
+#chatSection {
+    width: 30%;
+    float: left;
+    margin-top: 10px;
+    border-left: solid 1px gray;
+    padding: 5px;
+    height: 300px;
+}
+
+#chat {
+    float: left;
+    width:30%;
+}
+
+#searchFields {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#searchInput{
+    border-right: solid 1px red;
+    width: 290px;
+}
+
+#searchBtn {
+    width: 115px;
+}
+
+/*   FOOOTER */ 
+
+.footer-distributed{
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: normal 16px sans-serif;
+    display: inline-block;
+    padding: 3% 50px;
+    margin-top: 80px;
+}
+
+.footer-distributed .footer-left p{
+    color:  #8f9296;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Footer links */
+
+.footer-distributed p.footer-links{
+    font-size:18px;
+    font-weight: bold;
+    color:  #ffffff;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.footer-distributed p.footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color:  inherit;
+}
+
+.footer-distributed .footer-right{
+    float: right;
+    margin-top: 6px;
+    max-width: 180px;
+}
+
+.footer-distributed .footer-right a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color:  #33383b;
+    border-radius: 2px;
+
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+
+    margin-left: 3px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 600px) {
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-right{
+        text-align: center;
+    }
+
+    .footer-distributed .footer-right{
+        float: none;
+        margin: 0 auto 20px;
+    }
+
+    .footer-distributed .footer-left p.footer-links{
+        line-height: 1.8;
+   }
