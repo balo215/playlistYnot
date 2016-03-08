@@ -1,0 +1,69 @@
+var create = document.getElementById("create");
+var join = document.getElementById("join");
+join.addEventListener("click", function(){
+    callJoinAlert();
+});
+create.addEventListener("click", function(){
+    callAlert();
+    });
+
+function callJoinAlert(){
+    swal({title: 'Join to playlist',
+        html: '<p><input id="playlistName" placeholder="Name" required></p> '+
+              '<label> Password: </label> <input type=checkbox id="pwdCB">' +
+              '<p><input id="pwd" placeholder="Password" type=password hidden="hidden"></p>',
+        showCancelButton: true,
+        closeOnConfirm: false,
+     },
+     function() {
+         if($('#playlistName').val() != ""){
+            swal.disableButtons();
+            setTimeout(function(){
+                console.log("ajax function");
+                swal.({
+                    title: "Enjoy it!",
+                    type: "success",
+                    timer: 1000
+            }, 2000);
+            
+        }else{
+            swal({
+                title:'Woops!',
+                text: 'You must write a name',
+                type: 'error',
+                closeOnConfirm: false
+            }, 
+            function(){
+                callJoinAlert();
+            })
+        }
+    })
+    var pwdCB = document.getElementById("pwdCB");
+    var passField = document.getElementById("pwd");
+    pwdCB.addEventListener("click", function(){
+        if(pwdCB.checked == false){
+            passField.setAttribute("hidden", "hidden");
+        }else{
+            passField.removeAttribute("hidden");
+        }
+    });
+};
+
+function callAlert(){
+    swal({
+        title: 'Input something',
+        html: '<p><input id="input-field">',
+        showCancelButton: true,
+        closeOnConfirm: false
+    },
+    function() {
+        swal({
+        html:
+            'You entered: <strong>' +
+            $('#input-field').val() +
+            '</strong>'
+        });
+    })
+};
+
+

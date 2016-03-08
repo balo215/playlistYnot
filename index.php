@@ -26,14 +26,14 @@
             </aside>
             <section class="col-md-6 col-lg-6" id="about">
                 <div id="sectionMain">
-                    <button id="create" href="plTemplate.php" onclick="location.href='plTemplate.php';"> Create </button>
-                    <button id="join" href="plTemplate.php" onclick="location.href='plTemplate.php';"> Join </button>
+                    <button id="create"> Create </button>
+                    <button id="join"> Join </button>
                 </div>
             </section>
         </div> <!--div row contenido principal -->
 
         </div>   
-    </body>
+        <script type="text/javascript" src="sweetAlerts.js"></script>
 <?php
     require_once "footer.html";
 ?>
