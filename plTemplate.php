@@ -9,28 +9,20 @@
                     <h4 class="panel-title"> Video title </h4>
                 </div>
 
-                <iframe
-                    src="http://www.youtube.com/embed/amZLLYqjyKQ?playlist=8jL2DPylmhE">
-                    <!--El segundo video despues de 'playlist=' sera reemplazado con JS para de esta manera
-                        dinamicamente ir agregando videos con la API de youtube -->
-                </iframe>
+                <div id="principalVideo">
+                </div>
             </div>
             <div id="queuedVideos">
-                <img src="thumbnail.jpg"> <label><strong> Video tittle </strong></label> 
             </div>
         </aside>           
         <section id="searchSection" class="col-md-4 col-lg-4">
             <div id="searchFields">
-                <input placeholder="Search Something..." id="searchInput"> </input>
-                <input type="button" value="Search" id="searchBtn" class="btn btn-lg btn-danger"> 
+                <form action=#>
+                    <input placeholder="Search Something..." id="searchInput"> </input>
+                    <input type="submit" value="Search" id="searchBtn" class="btn btn-lg btn-danger"> 
+                </form>
             </div>
             <div id="results">
-                 <img src="thumbnail.jpg"> <label><strong> Video tittle </strong></label> 
-                <!--La linea anterior sera reemplazada con jQuery usando la api de youtube, esto porque
-                    es mas sencillo manipular el objeto que obtenemos al hacer la busqueda del video
-                    asi generamos el thumnail y el titulo automaticamente, solo para ubicarlo dentro del div 
-                -->
-
             </div>
         </section>
         <aside id="chatSection"  class="col-md-4 col-lg-4">
@@ -52,3 +44,8 @@
 <?php
     include_once "footer.html";
 ?>
+
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
+<script src="app.js"></script>
+

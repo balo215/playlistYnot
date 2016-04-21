@@ -8,14 +8,13 @@ function callJoinAlert(){
         html: '<p><input id="playlistName" placeholder="Name" required></p> '+
               '<label> Password: </label> <input type=checkbox id="pwdCB">' +
               '<p><input id="pwd" placeholder="Password" type=password hidden="hidden"></p>',
-        showCancelButton: true,
         closeOnConfirm: false,
+        showCancelButton: true
      },
      function() {
          if($('#playlistName').val() != ""){
             swal.disableButtons();
             setTimeout(function(){
-                console.log("ajax function");
                 var returnCode = 1;
                 if(returnCode === 1){
                     swal({
