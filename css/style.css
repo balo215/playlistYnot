@@ -183,6 +183,12 @@ iframe{
 
 #searchBtn {
     width: 115px;
+    box-shadow: 0px 9px red;
+}
+
+#searchBtn:active{
+    box-shadow: 0px 4px red;
+    transform: translateY(4px);
 }
 
 /*   FOOOTER */ 
@@ -266,3 +272,4 @@ iframe{
     .footer-distributed .footer-left p.footer-links{
         line-height: 1.8;
    }
+

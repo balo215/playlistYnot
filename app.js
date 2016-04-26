@@ -66,4 +66,5 @@ function createQueuedVideos(image, title){
     divForLabel.appendChild(label);
     div.appendChild(divForLabel);
     document.getElementById("queuedVideos").appendChild(div);
+    document.getElementById("next").removeAttribute("disabled");
 }
