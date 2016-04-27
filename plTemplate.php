@@ -42,13 +42,39 @@
         </aside>
         </div>
     </div>
-    </body>
-<?php
-    include_once "footer.html";
-?>
+    <footer class="footer-distributed">
 
+            <div class="footer-right">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+
+            </div>
+
+            <div class="footer-left">
+
+                <p class="footer-links">
+                    <a href="index.php">Home</a>
+                    ·
+                    <a href="aboutUs.php">About</a>
+                    ·
+                    <a href="faq.php">Faq</a>
+                    ·
+                    <a href="contact.php">Contact</a>
+                </p>
+
+                <p>KeepTheHateGoing © 2016</p>
+            </div>
+
+        </footer>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="https://apis.google.com/js/client.js?onload=init"></script>
 <script src="app.js"></script>
 <script src="video.js"></script>
+
+    </body>
+</html>
+~         
 

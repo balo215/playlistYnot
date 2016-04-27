@@ -12,7 +12,9 @@ body{
 #container{
     margin: 0px 2%;
     min-height: 68%;
-    
+    display:inline-block;
+    width: 96%;
+    margin-bottom: 125px;
 }
 header {
     border-bottom: 2px solid blue;
@@ -195,7 +197,7 @@ iframe{
 
 #results{
     padding-bottom: 65px;
-    margin-bottom: 65px;
+    margin-bottom: 95px;
 }
 
 .footer-distributed{
@@ -208,7 +210,7 @@ iframe{
     font: normal 16px sans-serif;
     display: inline-block;
     padding: 3% 50px;
-    margin-top: 80px;
+    bottom: 0px;
 }
 
 .footer-distributed .footer-left p{
