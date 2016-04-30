@@ -45,9 +45,12 @@
 <?php
     include_once "footer.html";
 ?>
-
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="https://apis.google.com/js/client.js?onload=init"></script>
 <script src="app.js"></script>
 <script src="video.js"></script>
+
+    </body>
+</html>
+~         
 
