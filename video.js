@@ -26,12 +26,12 @@ function onPlayerReady(event) {
 document.getElementById("next").addEventListener("click", function(){
     var element = document.getElementById("queuedVideos").childNodes[i+1];       
     element.style.background = "rgba(51,122,183,.53)";
-    player.cueVideoById({videoId:playlist[i],
+    player.cueVideoById({videoId:arreglo[i].id,
                          startSeconds:0
     })
     player.playVideo();
     i++;
-    if(i == playlist.length){
+    if(i >= arreglo.length){
         document.getElementById("next").setAttribute("disabled", "disabled");
     }
     if(i > 1){
@@ -43,9 +43,10 @@ document.getElementById("next").addEventListener("click", function(){
 });
 
 document.getElementById("prev").addEventListener("click", function(){
+console.log(document.getElementById("queuedVideos").childNodes[i]);
     var element = document.getElementById("queuedVideos").childNodes[i-1];
     element.style.background = "rgba(51,122,183,.53)";
-    player.cueVideoById({videoId:playlist[i-2],
+    player.cueVideoById({videoId:arreglo[i-2].id,
                          startSeconds:0
     })
     player.playVideo();
@@ -63,18 +64,18 @@ document.getElementById("prev").addEventListener("click", function(){
       //    the player should play for six seconds and then stop.
 var i = 0;
 function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.ENDED && i == playlist.length) {
+    if (event.data == YT.PlayerState.ENDED && i == arreglo.length) {
         setTimeout(stopVideo, 600);
-        if(playlist.length > 0){
+        if(arreglo.length > 0){
             var prevElement = document.getElementById("queuedVideos").childNodes[i];
             prevElement.style.background = "white";
         }
         i=0;
     }
-    if(event.data == YT.PlayerState.ENDED && i < playlist.length){
+    if(event.data == YT.PlayerState.ENDED && i < arreglo.length){
         var element = document.getElementById("queuedVideos").childNodes[i+1];
         element.style.background = "rgba(51,122,183,.53)";
-        player.cueVideoById({videoId:playlist[i],
+        player.cueVideoById({videoId:arreglo[i].id,
                    startSeconds:0      
         })
         i++;

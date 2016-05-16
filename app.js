@@ -6,7 +6,7 @@ function tplawesome(e,t){
     }
     return res
 }
-playlist =  [];
+arreglo = [];
 $(function() {
     $("form").on("submit", function(e) {
        e.preventDefault();
@@ -47,24 +47,57 @@ window.onload = function init() {
 }
 
 function addVideo(id, image, title){
-    playlist.push(id);
-    createQueuedVideos(image, title);
-    console.log(document.getElementById("queuedVideos").childNodes);
+    createQueuedVideos(id, image, title);
+    
+    arreglo.push(title={"id":id,"img":image,"title":title});
+    console.log(arreglo);
 }
 
-function createQueuedVideos(image, title){
+function createQueuedVideos(id, image, title){
     var div             = document.createElement("div");
     var divForLabel     = document.createElement("div");
     var img             = document.createElement("img");
     var label           = document.createElement("label");
+    var p               = document.createElement("p");
+    var span            = document.createElement("span");
+    p.className         = "btn btn-danger btn-xs";
+    span.className      = "glyphicon glyphicon-trash";
+    p.addEventListener("click", function(){
+        deleteVideo(this.parentElement);
+    });
     div.style.textAlign = "left";
     div.style.display   = "flex";
+    div.id              = id;
     div.style.padding   = "10px";
+    p.style.height      = "24px";
     img.src             = image;
     label.innerHTML     = title;
     div.appendChild(img);
     divForLabel.appendChild(label);
+    p.appendChild(span);
     div.appendChild(divForLabel);
+    div.appendChild(p);
     document.getElementById("queuedVideos").appendChild(div);
     document.getElementById("next").removeAttribute("disabled");
+
+}
+
+function deleteVideo(element){
+    for(var single in arreglo){
+        if(arreglo[single]["id"] == element.id){
+            if(single < i){
+                i--;
+                console.log(i);
+            }
+            arreglo.splice(single, 1);
+            element.remove();
+            return;
+        }
+    }
+}
+
+function fillPlayList(playlist){
+    for(var single in playlist){
+        createQueuedVideos(playlist[single].id, playlist[single].image, playlist[single].title)
+    }
 }
