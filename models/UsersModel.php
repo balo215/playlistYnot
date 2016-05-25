@@ -1,18 +1,17 @@
 <?php
-    
     require_once ('db/databaseClass.php');
-    class list_model extends databaseClass {
-        public $list;
+    class users_model extends databaseClass {
+        public $usuario;
         function __construct() {
-            require('models/ListModelClass.php');
-            $list = new listClass();
+            require('UsersModelClass.php');
+            $usuario = new users();
             
-        }//constructor
-        function buscar() {
+        }
+        function login($email,$pass) {
             $conexion = databaseClass::singleton ();
             if (!$conexion->conectar())
                 die('FALLO'.$conexion->errno.':'.$conexion->error);
-            $consulta = "SELECT * FROM listas;";
+            $consulta = "SELECT * FROM  usuarios WHERE correo = '$email' AND pass = '$pass';";
             $resultado = $conexion -> ejecutarConsulta($consulta);
             if(!$resultado) {
                 $conexion->cerrar();

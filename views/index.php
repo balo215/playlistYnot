@@ -1,6 +1,3 @@
-<?php
-    require_once "header.html";
-?>
          <div class="row">   
             <aside class="col-md-2 col-lg-2">
                 <div class="panel panel-primary">
@@ -8,9 +5,9 @@
                         <h4 class="panel-title"> List tittle </h4>
                     </div>
                     <ul>
-                        <li><a href="#"> electroMusic </a> </li>
-                        <li><a href="#"> ejemplo </a> </li> 
-                        <li><a href="#"> tutos </a> </li>
+                        <li><a href="#">{title}</a> </li>
+                        <li><a href="#">{title2} </a> </li> 
+                        <li><a href="#">{title3}</a> </li>
                     </ul>
                 </div>
                 <div class="panel panel-primary">
@@ -34,6 +31,3 @@
 
         </div>   
         <script type="text/javascript" src="views/js/sweetAlerts.js"></script>
-<?php
-    require_once "footer.html";
-?>

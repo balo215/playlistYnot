@@ -34,6 +34,7 @@
                             <input id="password" type="text" placeholder="password">
 
                         </p>
+                        <button id="processSignIn" value="Sign In"> Sign In </button>
                     </div>
                 </section>
             </div>

@@ -26,17 +26,20 @@
                 </aside>
     
                 <section class="col-md-5 col-lg-5" id="about">
-                    <div class="signUpSection" id="login">
-                        <h3> Log in</h3>
-                        <p>    
-                            <input id="inputEmail" type="email" placeholder="User" class="form-control">
-                        </p>
-                        <p>
-                        <p>
-                            <input id="inputPwd" type="password" placeholder="password" class="form-control">
-                        </p>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                    </div>
+                    <form class="form-login" action="../index.php" method="post">
+                        <div class="signUpSection" id="login">
+                            <h3> Log in</h3>
+                            <p>    
+                                <input id="inputEmail" type="email" name="email" placeholder="User" class="form-control">
+                            </p>
+                            <p>
+                            <p>
+                                <input id="inputPwd" type="password" name="pass" placeholder="password" class="form-control">
+                            </p>
+                            <input type="hidden" name="action" value="login" />
+                            <input class="btn btn-lg btn-primary btn-block" type="submit" value="submit">
+                        </div>
+                     </form>
                 </section>
             </div>
         </div>   

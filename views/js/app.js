@@ -26,7 +26,9 @@ $(function() {
           $("#results").html("");
           $.each(results.items, function(index, item) {
             $.get("item.html", function(data) {
-                $("#results").append(tplawesome(data, [{"title":item.snippet.title, "image":item.snippet.thumbnails.default.url, "id":item.id.videoId}]));
+                var url = item.id.videoId.replace(/[\"\']/g,'');
+                var title = item.snippet.title.replace(/[\"\']/g, '');
+                $("#results").append(tplawesome(data, [{"title":title, "image":item.snippet.thumbnails.default.url, "id":url}]));
             });
           });
           resetVideoHeight();
