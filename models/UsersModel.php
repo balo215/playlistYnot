@@ -22,5 +22,26 @@
                 return $resultado;
             }
         }
+        function sign($array){
+            $name = $array['name'];
+            $username = $array['username'];
+            $lastname = $array['lastname'];
+            $pass = $array['password'];
+            $email = $array['email'];
+            $conexion = databaseClass::singleton ();
+            if (!$conexion->conectar())
+                die('FALLO'.$conexion->errno.':'.$conexion->error);
+            $consulta = "INSERT INTO usuarios (nombre, apellido, usuario, pass, correo) VALUES ('$name', '$lastname', '$username', '$pass', '$email')";
+            $resultado = $conexion -> ejecutarConsulta($consulta);
+            if(!$resultado) {
+                $conexion->cerrar();
+                return FALSE;
+            }
+            else {
+                $conexion -> cerrar();
+                return $resultado;
+            }
+
+        }
     }
 ?>

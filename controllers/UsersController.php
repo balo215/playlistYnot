@@ -36,13 +36,20 @@
                         
                     }   
                 }   
-               
-            if(isset($_SESSION) && isset($_SESSION['logued'])){
+                if($action == "sign"){
+                    $insert = $this->users->sign($_POST);
+                    if($insert != false){
+                        echo $this->processTemplate('index.php', "[]");
+                    }
+                    
+                }
+   
+/*            if(isset($_SESSION) && isset($_SESSION['logued'])){
                  echo $this->processTemplate('views/index.php', []);
             } else{
                 echo $this->processTemplate('views/index.php', []);
             }
-
+*/
 
 
 

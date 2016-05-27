@@ -16,8 +16,8 @@
                 $controller = new tmpListController();
             break;
             default:
-                include('controllers/defaultController.php');
-                $controller = new defacultController(); 
+                //include('controllers/defaultController.php');
+                //$controller = new defacultController(); 
             break;
         }
     }

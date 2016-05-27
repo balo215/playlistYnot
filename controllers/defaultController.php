@@ -8,12 +8,11 @@
             require 'models/ListModel.php';
             require 'models/UsersModel.php';
             $this->list  = new list_model();
-            $this->users = new users_model();
         }
         
         function execute(){
             $top5 = $this->list->buscar();
-echo $this->processTemplate('views/index.php', $top5);
+            echo $this->processTemplate('views/index.php', $top5);
 /*            if(isset($_REQUEST["action"])){
                 $action = $_REQUEST["action"];
                 if($action == "login"){

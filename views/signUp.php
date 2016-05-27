@@ -26,12 +26,20 @@
                             <input id="user" type="text" placeholder="User">
                         </p>
                         <p>
+
+                        <p>
+                            <input id="name" type="text" placeholder="name">
+                        </p>
+
+                        <p>
+                            <input id="lastname" type="text" placeholder="lastname">
+                        </p>
                   
-                            <input id="email" type="text" placeholder="email">
+                            <input id="email" type="email" placeholder="email">
                         </p>
                         <p>
                  
-                            <input id="password" type="text" placeholder="password">
+                            <input id="password" type="password" placeholder="password">
 
                         </p>
                         <button id="processSignIn" value="Sign In"> Sign In </button>
@@ -40,6 +48,8 @@
             </div>
         </div>   
     </body>
+<script src="js/validate.js"></script>
+<script src="js/user.js"></script>
 <?php
     require_once "footer.html";
 ?>
