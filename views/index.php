@@ -30,4 +30,4 @@
         </div> <!--div row contenido principal -->
 
         </div>   
-        <script type="text/javascript" src="views/js/sweetAlerts.js"></script>
+        <script type="text/javascript" src="/playlistYnot/views/js/sweetAlerts.js"></script>

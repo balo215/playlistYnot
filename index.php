@@ -8,16 +8,16 @@
                 $controller = new user_controller();
             break;
             case 'list':
-                include('../controllers/ListController.php');
-                $controller = new listController();
+                include('controllers/ListController.php');
+                $controller = new list_controller();
             break;
             case 'tmpList':
                 include('../controllers/TmpListController.php');
                 $controller = new tmpListController();
             break;
             default:
-                //include('controllers/defaultController.php');
-                //$controller = new defacultController(); 
+                include('controllers/defaultController.php');
+                $controller = new defacultController(); 
             break;
         }
     }

@@ -23,5 +23,20 @@
                 return $resultado;
             }
         }
+        function buscarNombre($name){
+            $conexion = databaseClass::singleton ();
+            if (!$conexion->conectar())
+                die('FALLO'.$conexion->errno.':'.$conexion->error);
+            $consulta = "SELECT * FROM listas WHERE nombre = '$name';";
+            $resultado = $conexion -> ejecutarConsulta($consulta);
+            if(!$resultado) {
+                $conexion->cerrar();
+                return FALSE;
+            }
+            else {
+                $conexion -> cerrar();
+                return $resultado;
+            }
+        }
     }
 ?>

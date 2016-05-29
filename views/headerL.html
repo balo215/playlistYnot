@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="/playlistYnot/views/js/sweetalert2.css">
         <script src="/playlistYnot/views/js/jquery-1.12.1.min.js"> </script>
         <script src="/playlistYnot/views/js/userButton.js"></script>
+        <script src="/playlistYnot/views/js/validate.js"></script>
     </head>
     <body>
         <div id="container">
@@ -26,7 +27,7 @@
                 </form>
 
                 <div id="logSection">
-                    <button id="userBtn" value="{USER}"> {USER} </button>
+                    <button id="userBtn" value="{USER}" onclick="location.href='index.php?controller=user&action=kill'" > {USER} </button>
                 </div>
             </div>
             </header>

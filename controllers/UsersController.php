@@ -12,13 +12,18 @@
             if(isset($_REQUEST["action"])){
                 $action = $_REQUEST["action"];
                 if($action == "kill"){
+                    $_SESSION = NULL;
+                    session_unset();
                     session_destroy();
-                    $_SESSION = array();
-                    echo $this->processTemplate('index.php', "[]");
+                    $action = "";
+                    
+                    echo $this->processTemplate('views/index.php', "[]");
                 }
 
 
-
+                if($action == "logForm"){
+                    echo $this->processTemplate('views/logIn.php', '[]');
+                }
                 if($action == "login"){
                     if (!isset($_REQUEST['email']) && !isset($_REQUEST['pass'])) {
                     } else {
@@ -30,8 +35,9 @@
                                 $_SESSION['logued']=true;
                                 $_SESSION['email']=$user[0]['correo'];
                             }   
+                            echo $this->processTemplate('views/index.php', "[]");
                          }else{  
-                            echo $this->processTemplate('views/logIn.php', $user);
+                            echo $this->processTemplate('views/logIn.php', "[]");
                         }   
                         
                     }   
@@ -50,8 +56,6 @@
                 echo $this->processTemplate('views/index.php', []);
             }
 */
-
-
 
 
             }

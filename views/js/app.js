@@ -88,7 +88,6 @@ function deleteVideo(element){
         if(arreglo[single]["id"] == element.id){
             if(single < i){
                 i--;
-                console.log(i);
             }
             arreglo.splice(single, 1);
             element.remove();

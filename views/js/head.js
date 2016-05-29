@@ -4,6 +4,11 @@ $(window).load(function(){
     });
 
     document.getElementById("lognBtn").addEventListener("click", function(){
-        window.location.href = "/playlistYnot/views/logIn.php";
+        $.get( "/playlistYnot/index.php?controller=user&action=logForm",
+                  function(data){
+                      $("html").html(data);
+                  }
+              );
     });
+
 });

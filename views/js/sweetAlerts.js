@@ -5,15 +5,26 @@ join.addEventListener("click", function(){
 
 function callJoinAlert(){
     swal({title: 'Join to playlist',
-        html: '<p><input id="playlistName" placeholder="Name" required></p> '+
+        html: '<form id="joinForm" action="index.php?=controller=list&action="join" method="POST">'+
+              '<p><input id="playlistName" placeholder="Name" required></p> '+
               '<label> Password: </label> <input type=checkbox id="pwdCB">' +
-              '<p><input id="pwd" placeholder="Password" type=password hidden="hidden"></p>',
+              '<p><input id="pwd" placeholder="Password" type=password hidden="hidden"></p>'+
+              '</form>',
         closeOnConfirm: false,
         showCancelButton: true
      },
      function() {
          if($('#playlistName').val() != ""){
+            var values = getPlaylistValues($('#playlistName').val(), $('#pwdCB').val());
             swal.disableButtons();
+            $.post( "/playlistYnot/index.php?controller=list&action=join",
+                             values,
+                             function(data){
+                                window.location.href = "views/plTemplate.php";
+                                console.log(data );
+                             }
+                         );
+
             setTimeout(function(){
                 var returnCode = 1;
                 if(returnCode === 1){
@@ -23,7 +34,14 @@ function callJoinAlert(){
                         timer: 2000,
                         showConfirmButton: false
                         });
-                        window.location.href = "views/plTemplate.php";
+                        //window.location.href = "views/plTemplate.php";
+/*                        $.post( "/playlistYnot/index.php?controller=list&action=join",
+                             values,
+                             function(data){
+                                 $("html").html(data);
+                             }
+                        );*/
+
                 }else{
                     sweetAlert(
                                'Oops...',
