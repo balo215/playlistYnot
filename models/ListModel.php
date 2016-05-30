@@ -38,5 +38,51 @@
                 return $resultado;
             }
         }
+        function buscarNombrePass($name, $pass){
+            $conexion = databaseClass::singleton ();
+            if (!$conexion->conectar())
+                die('FALLO'.$conexion->errno.':'.$conexion->error);
+            $consulta = "SELECT * FROM listas WHERE nombre = '$name' AND pass = '$pass';";
+            $resultado = $conexion -> ejecutarConsulta($consulta);
+            if(!$resultado) {
+                $conexion->cerrar();
+                return FALSE;
+            }
+            else {
+                $conexion -> cerrar();
+                return $resultado;
+            }   
+        }
+        function obtenerCanciones($name){
+            $conexion = databaseClass::singleton ();
+            if (!$conexion->conectar())
+                die('FALLO'.$conexion->errno.':'.$conexion->error);
+            $consulta = "SELECT canciones FROM listas WHERE nombre = '$name';";
+            $resultado = $conexion -> ejecutarConsulta($consulta);
+            if(!$resultado) {
+                $conexion->cerrar();
+                return FALSE;
+            }
+            else {
+                $conexion -> cerrar();
+                return $resultado;
+            } 
+        }
+        function agregarCanciones($name, $list){
+            $conexion = databaseClass::singleton ();
+            if (!$conexion->conectar())
+                die('FALLO'.$conexion->errno.':'.$conexion->error);
+            $consulta = "UPDATE listas SET canciones = '$list' WHERE nombre = '$name';";
+            $resultado = $conexion -> ejecutarConsulta($consulta);
+            if(!$resultado) {
+                $conexion->cerrar();
+                return FALSE;
+            }
+            else {
+                $conexion -> cerrar();
+                return $resultado;
+            }
+
+        }
     }
 ?>

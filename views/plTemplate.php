@@ -2,7 +2,7 @@
 include_once "header.html";
 ?>
 <div class="row">
-    <h2>Tittle</h2>
+    <h2 id="title">{{TITLE}}</h2>
 <aside id="videoSection"  class="col-md-4 col-lg-4">
     <div class="panel panel-primary"> 
         <div class= "panel-heading">
@@ -19,7 +19,7 @@ include_once "header.html";
 </aside>           
 <section id="searchSection" class="col-md-4 col-lg-4">
     <div id="searchFields">
-        <form action=#>
+        <form id="searchForm"  action="#">
             <input placeholder="Search Something..." id="searchInput"> </input>
             <input type="submit" value="Search" id="searchBtn" class="btn btn-lg btn-danger"> 
         </form>
@@ -49,4 +49,4 @@ include_once "header.html";
 <script src="https://apis.google.com/js/client.js?onload=init"></script>
 <script src="js/app.js"></script>
 <script src="js/video.js"></script>
-
+<script> getPlaylistDetails();</script>

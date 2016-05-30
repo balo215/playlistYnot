@@ -89,3 +89,26 @@ function onPlayerStateChange(event) {
 function stopVideo() {
     player.stopVideo();
 }
+
+function getPlaylistDetails(){
+    $.get(
+         "../index.php?controller=list&action=details",
+         function(dat){
+            var playlist = JSON.parse(dat);
+            //document.body.innerHTML = document.body.innerHTML.replace('{{TITLE}}', playlist['name']);
+            document.getElementById("title").innerHTML = playlist['name'];
+            var songs = playlist['canciones'].substring(1, playlist['canciones'].length-1);
+            fillPlayList(songs.split(','));
+        }
+    );
+}
+
+function fillPlayList(playlist){
+    var singleVideo;
+    for(var single in playlist){
+        $.get("https://www.googleapis.com/youtube/v3/videos?part=snippet&id=" + playlist[single] + "&key=AIzaSyA5mmyKsmb5nZiCufGZUHgHE-ChjIwieVY" , function(data) {
+            singleVideo = data.items[0].snippet;
+            addSavedVideos(playlist[single], singleVideo['thumbnails']['default']['url'], singleVideo['title']);
+        });
+    }
+}

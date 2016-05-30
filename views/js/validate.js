@@ -33,7 +33,6 @@ function getValuesSigIn(){
     return data;
 }
 function getPlaylistValues(name, pass){
-    console.log(name + "heeeeeeere");
     var data = {
                     "name": name,
                     "password":pass

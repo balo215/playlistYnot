@@ -9,7 +9,8 @@ function tplawesome(e,t){
 }
 arreglo = [];
 $(function() {
-    $("form").on("submit", function(e) {
+    $("#searchForm").on("submit", function(e) {
+console.log("clicked");
        e.preventDefault();
        // prepare the request
        var request = gapi.client.youtube.search.list({
@@ -18,7 +19,6 @@ $(function() {
             q: encodeURIComponent($("#searchInput").val()).replace(/%20/g, "+"),
             maxResults: 5,
             order: "viewCount",
-//            publishedAfter: "2015-01-01T00:00:00Z"
        }); 
        // execute the request
        request.execute(function(response) {
@@ -32,10 +32,8 @@ $(function() {
             });
           });
           resetVideoHeight();
-
        });
-    });
-    
+    });    
     $(window).on("resize", resetVideoHeight);
 });
 
@@ -52,7 +50,19 @@ window.onload = function init() {
 function addVideo(id, image, title){
     createQueuedVideos(id, image, title);
     arreglo.push(title={"id":id,"img":image,"title":title});
+    $.post("../index.php?controller=list&action=addSong",
+            {'id': id},
+            function(data){
+                console.log(data);
+            }
+        );
 }
+
+function addSavedVideos(id, image, title){
+    createQueuedVideos(id, image, title);
+    arreglo.push(title={"id":id,"img":image,"title":title});
+}
+
 
 function createQueuedVideos(id, image, title){
     var div             = document.createElement("div");
@@ -96,8 +106,3 @@ function deleteVideo(element){
     }
 }
 
-function fillPlayList(playlist){
-    for(var single in playlist){
-        createQueuedVideos(playlist[single].id, playlist[single].image, playlist[single].title)
-    }
-}

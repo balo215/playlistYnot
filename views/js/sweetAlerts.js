@@ -15,18 +15,10 @@ function callJoinAlert(){
      },
      function() {
          if($('#playlistName').val() != ""){
-            var values = getPlaylistValues($('#playlistName').val(), $('#pwdCB').val());
+            var values = getPlaylistValues($('#playlistName').val(), $('#pwd').val());
             swal.disableButtons();
-            $.post( "/playlistYnot/index.php?controller=list&action=join",
-                             values,
-                             function(data){
-                                window.location.href = "views/plTemplate.php";
-                                console.log(data );
-                             }
-                         );
-
+            var returnCode = openTemplate(values);
             setTimeout(function(){
-                var returnCode = 1;
                 if(returnCode === 1){
                     swal({
                         title: "Enjoy it!",
@@ -34,14 +26,6 @@ function callJoinAlert(){
                         timer: 2000,
                         showConfirmButton: false
                         });
-                        //window.location.href = "views/plTemplate.php";
-/*                        $.post( "/playlistYnot/index.php?controller=list&action=join",
-                             values,
-                             function(data){
-                                 $("html").html(data);
-                             }
-                        );*/
-
                 }else{
                     sweetAlert(
                                'Oops...',
