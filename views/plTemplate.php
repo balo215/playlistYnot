@@ -28,7 +28,9 @@ include_once "headerT.html";
     </div>
 </section>
 <aside id="chatSection"  class="col-md-4 col-lg-4">
-    <div id="Elchat">
+    <div id="Elchat" style="
+    display: inline-block;
+    margin-top: -60px;">
     </div>
 </aside>
 </div>
@@ -41,4 +43,5 @@ include_once "headerT.html";
 <script src="js/app.js"></script>
 <script src="js/video.js"></script>
 <script> getPlaylistDetails();</script>
+<script src="js/chatSocketAchex.js"></script>
 <script type="text/javascript"> $('#Elchat').ChatSocket(); </script>
