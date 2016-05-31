@@ -100,6 +100,43 @@
                 return $resultado;
             }
         }
+        function creaLista($array){
+            $name = $array['list_nombre'];
+            $pass = $array['list_pass'];
+            if($pass == ""){
+                $pass = null;
+            }
+            $actualDate = date('Y-m-d H:i:s');
+            $conexion = databaseClass::singleton ();
+            if (!$conexion->conectar())
+                die('FALLO'.$conexion->errno.':'.$conexion->error);
+            if(isset($_SESSION)){
+                if(isset($_SESSION['email'])){
+                    $email = $_SESSION['email'];
+                    $consulta = "SELECT id FROM usuarios WHERE correo = '$email'";
+                    $resultadoSelect = $conexion -> ejecutarConsulta($consulta);
+                    $id = $resultadoSelect[0]['id'];
+                    $insert = "INSERT INTO listas (nombre, pass, id_user, canciones, fechaCreacion) VALUES ('$name', '$pass', '$id', '[]', '$actualDate')";
+                    $_SESSION['pname'] = $name;
+                }else{
+                    $insert = "INSERT INTO listas (nombre, pass,  canciones, fechaCreacion) VALUES ('$name', '$pass', '[]', '$actualDate')";
+                    $_SESSION['pname'] = $name;
+                }
+           }else{
+                $insert = "INSERT INTO listas (nombre, pass,  canciones, fechaCreacion) VALUES ('$name', '$pass', '[]', '$actualDate')";
+                $_SESSION['pname'] = $name;
+            }
+            $resultado = $conexion -> ejecutarConsulta($insert);
+            if(!$resultado) {
+                $conexion->cerrar();
+                return FALSE;
+            }
+            else {
+                $conexion -> cerrar();
+                return $resultado;
+            }
+
+        }
 
         
     }

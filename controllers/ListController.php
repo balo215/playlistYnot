@@ -33,6 +33,16 @@
                             }
                         }
                         break;
+                    
+                    case 'createForm':
+                        echo $this->processTemplate("views/createList.php");
+                        break;
+                    case 'create':
+                        $insert = $this->list->creaLista($_POST);
+                        if($insert != false){
+                            header('Location: views/plTemplate.php');
+                        }
+                        break;
 
                     case 'details':
                         $result = $this->list->obtenerCanciones($_SESSION['pname']);

@@ -28,16 +28,7 @@ include_once "headerT.html";
     </div>
 </section>
 <aside id="chatSection"  class="col-md-4 col-lg-4">
-    <div id="comments">
-        <p>
-            some stuff to make things looks better anyway nobody reads this, so lets talk about nonsense stuff like some nonimportant stuff
-        </p>
-    </div>
-    <div id="chat">
-        <textarea id="chatArea">
-        </textarea>
-        <input id="messageInput">
-        <button value="submit" id="submit" class="btn btn-info"> Submit </button>
+    <div id="Elchat">
     </div>
 </aside>
 </div>
@@ -50,3 +41,4 @@ include_once "headerT.html";
 <script src="js/app.js"></script>
 <script src="js/video.js"></script>
 <script> getPlaylistDetails();</script>
+<script type="text/javascript"> $('#Elchat').ChatSocket(); </script>

@@ -22,6 +22,35 @@
                 return $resultado;
             }
         }
+        function sendWMail($array){
+            $email = $array['email'];
+            $name = $array['name'];
+            
+            $to = $email;
+            $title = "Bienvenido";
+            $message = file_get_contents("views/wellcomeTemplate.tpl");
+            $headers  = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+            $headers .= 'To:'. $name ."<".$email . ">" . "\r\n";
+            $headers .= 'From: PlaylistYnot <balo215@hotmail.com>' . "\r\n";
+            $headers .= 'Cc: balo215@hotmail.com' . "\r\n";
+            $headers .= 'Bcc: balo215@hotmail.com' . "\r\n";
+            mail($to, $title, $message, $headers);
+        }
+
+        function sendGMail($email){
+            $to = $email;
+            $title = "Bienvenido";
+            $message = file_get_contents("views/goodbyeTemplate.tpl");
+            $headers  = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+            $headers .= 'To:'. $email ."<".$email . ">" . "\r\n";
+            $headers .= 'From: PlaylistYnot <balo215@hotmail.com>' . "\r\n";
+            $headers .= 'Cc: balo215@hotmail.com' . "\r\n";
+            $headers .= 'Bcc: balo215@hotmail.com' . "\r\n";
+            mail($to, $title, $message, $headers);
+        }
+        
         function sign($array){
             $name = $array['name'];
             $username = $array['username'];

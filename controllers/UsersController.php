@@ -47,6 +47,7 @@
                 }   
                 if($action == "sign"){
                     $insert = $this->users->sign($_POST);
+                    //$this->users->sendWMail($_POST);
                     if($insert != false){
                         header('Location: index.php');
                     }
@@ -83,6 +84,7 @@
                 if($action == "deleteUser"){
                     $email = $_SESSION['email'];
                     $result = $this->users->deleteUser($email);
+                    //$this->users->sendBMail($email);
                     $_SESSION = array();
                     session_destroy();
                     echo $result;

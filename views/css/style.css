@@ -157,6 +157,7 @@ iframe{
     border-left: solid 1px gray;
     padding: 5px;
     height: 300px;
+    display: inline-block;
 }
 
 #chatSection {
@@ -198,6 +199,7 @@ iframe{
 #results{
     padding-bottom: 65px;
     margin-bottom: 95px;
+    display: inline-block;
 }
 
 .footer-distributed{
