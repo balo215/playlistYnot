@@ -23,6 +23,22 @@
                 return $resultado;
             }
         }
+        function buscar3() {
+            $conexion = databaseClass::singleton ();
+            if (!$conexion->conectar())
+                die('FALLO'.$conexion->errno.':'.$conexion->error);
+            $consulta = "SELECT nombre FROM listas WHERE pass = '' LIMIT 3;";
+            $resultado = $conexion -> ejecutarConsulta($consulta);
+            if(!$resultado) {
+                $conexion->cerrar();
+                return FALSE;
+            }
+            else {
+                $conexion -> cerrar();
+                return $resultado;
+            }
+        }
+
         function buscarNombre($name){
             $conexion = databaseClass::singleton ();
             if (!$conexion->conectar())

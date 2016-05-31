@@ -13,8 +13,24 @@
         }
         
         function execute(){
-            $top5 = $this->list->buscar();
-            echo $this->processTemplate('views/index.php', $top5);
+            $top3 = $this->list->buscar3();
+            $view = file_get_contents("views/index.php");
+            $lineStart = strrpos($view, "<li><a");
+            $lineEnd = strrpos($view, "</li>")+5;
+
+            $lineS = substr($view, $lineStart, $lineEnd-$lineStart);
+            foreach($top3 as $line){
+                $newLine = $lineS;
+                $array = array('{LIST}'=> $line['nombre']);
+                $newLine = strtr($newLine, $array);
+                $lines .= $newLine;
+            }
+            $view = str_replace($lineS, $lines, $view);
+            $header = file_get_contents("views/header.html");
+            $footer = file_get_contents("views/footer.html");
+            echo $header . $view . $footer;
+
+
         }
 
         

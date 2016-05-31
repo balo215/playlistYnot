@@ -12,12 +12,12 @@
                 $controller = new list_controller();
             break;
             case 'tmpList':
-                include('../controllers/TmpListController.php');
+                include('controllers/TmpListController.php');
                 $controller = new tmpListController();
             break;
             default:
                 include('controllers/defaultController.php');
-                $controller = new defacultController(); 
+                $controller = new defaultController(); 
             break;
         }
     }
