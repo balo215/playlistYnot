@@ -1,6 +1,10 @@
 $(window).load(function(){
-    document.getElementById("signUpBtn").addEventListener("click", function(){
-        window.location.href = "/playlistYnot/views/signUp.php"; 
+/*    document.getElementById("signUpBtn").addEventListener("click", function(){
+         $.get( "/playlistYnot/index.php?controller=user&action=signForm",
+                function(data){
+                      $("html").html(data);
+                }
+             );
     });
 
     document.getElementById("lognBtn").addEventListener("click", function(){
@@ -10,5 +14,5 @@ $(window).load(function(){
                   }
               );
     });
-
+*/
 });

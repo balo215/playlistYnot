@@ -275,3 +275,7 @@ iframe{
         line-height: 1.8;
    }
 
+#deleteAccount {
+    width: initial;
+    margin-top: 50px;
+}

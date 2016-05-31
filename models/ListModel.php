@@ -72,7 +72,8 @@
             $conexion = databaseClass::singleton ();
             if (!$conexion->conectar())
                 die('FALLO'.$conexion->errno.':'.$conexion->error);
-            $consulta = "UPDATE listas SET canciones = '$list' WHERE nombre = '$name';";
+            $actualDate = date('Y-m-d H:i:s');
+            $consulta = "UPDATE listas SET canciones = '$list', fechaMod = '$actualDate'  WHERE nombre = '$name';";
             $resultado = $conexion -> ejecutarConsulta($consulta);
             if(!$resultado) {
                 $conexion->cerrar();
@@ -84,5 +85,22 @@
             }
 
         }
+        function borrarCancion($name, $list){
+            $conexion = databaseClass::singleton ();
+            if (!$conexion->conectar())
+                die('FALLO'.$conexion->errno.':'.$conexion->error);
+            $consulta = "UPDATE listas SET canciones = '$list' WHERE nombre = '$name';";
+            $resultado = $conexion -> ejecutarConsulta($consulta);
+            if(!$resultado) {
+                $conexion->cerrar();
+                return FALSE;
+            }
+            else {
+                $conexion -> cerrar();
+                return $resultado;
+            }
+        }
+
+        
     }
 ?>

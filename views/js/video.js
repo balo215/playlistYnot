@@ -95,8 +95,18 @@ function getPlaylistDetails(){
          "../index.php?controller=list&action=details",
          function(dat){
             var playlist = JSON.parse(dat);
-            //document.body.innerHTML = document.body.innerHTML.replace('{{TITLE}}', playlist['name']);
             document.getElementById("title").innerHTML = playlist['name'];
+            if(playlist["logued"] == true){
+                document.getElementById("logSection_2").removeAttribute("hidden");
+                document.getElementById("logSection_2").style.display = "inline-block";
+                document.getElementById("logSection_1").remove();
+                document.getElementById("userBtn").value = playlist['email'];
+                document.getElementById("userBtn").innerHTML = playlist['email'];
+            }else{
+                document.getElementById("logSection_1").removeAttribute("hidden");
+                document.getElementById("logSection_1").style.display = "inline-block";
+                document.getElementById("logSection_2").remove();
+            }
             var songs = playlist['canciones'].substring(1, playlist['canciones'].length-1);
             fillPlayList(songs.split(','));
         }
@@ -106,9 +116,15 @@ function getPlaylistDetails(){
 function fillPlayList(playlist){
     var singleVideo;
     for(var single in playlist){
-        $.get("https://www.googleapis.com/youtube/v3/videos?part=snippet&id=" + playlist[single] + "&key=AIzaSyA5mmyKsmb5nZiCufGZUHgHE-ChjIwieVY" , function(data) {
-            singleVideo = data.items[0].snippet;
-            addSavedVideos(playlist[single], singleVideo['thumbnails']['default']['url'], singleVideo['title']);
+console.log(playlist[single]);
+        $.ajax({
+            url:"https://www.googleapis.com/youtube/v3/videos?part=snippet&id=" + playlist[single] + "&key=AIzaSyA5mmyKsmb5nZiCufGZUHgHE-ChjIwieVY",
+            type: "get",
+            async: false,
+            success: function(data){
+                singleVideo = data.items[0].snippet;
+                addSavedVideos(playlist[single], singleVideo['thumbnails']['default']['url'], singleVideo['title']);
+            }
         });
     }
 }

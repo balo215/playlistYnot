@@ -100,6 +100,11 @@ function deleteVideo(element){
                 i--;
             }
             arreglo.splice(single, 1);
+            $.get( "/playlistYnot/index.php?controller=list&action=deleteSong",
+                  ({"id":element.id}),
+                  function(data){
+                  }
+               );
             element.remove();
             return;
         }

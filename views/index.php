@@ -23,7 +23,7 @@
             </aside>
             <section class="col-md-6 col-lg-6" id="about">
                 <div id="sectionMain">
-                    <button id="create"> Create </button>
+                    <button id="create" > Create </button>
                     <button id="join"> Join </button>
                 </div>
             </section>

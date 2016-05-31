@@ -36,7 +36,11 @@
 
                     case 'details':
                         $result = $this->list->obtenerCanciones($_SESSION['pname']);
-                        echo json_encode(array("canciones"=>$result[0]['canciones'], "name"=>$_SESSION['pname']));
+                        if(!isset($_SESSION['email'])){
+                            echo json_encode(array("canciones"=>$result[0]['canciones'], "name"=>$_SESSION['pname'], "logued"=>false));
+                        }else{
+                            echo json_encode(array("canciones"=>$result[0]['canciones'], "name"=>$_SESSION['pname'], "logued"=>true, "email"=>$_SESSION['email']));
+                        }
                         break;
                     
                     case 'addSong':
@@ -51,7 +55,14 @@
                         echo $updateResult;
                         break;
                     case 'deleteSong':
-                        $result = $this->list->borrarCancion($_SESSION['pname'], $id);
+                        $result = $this->list->obtenerCanciones($_SESSION['pname']);
+                        $idSong = $_REQUEST['id'];
+                        $fullList = $result[0]['canciones'];
+                        $newList = substr($fullList, 0, strpos($fullList, $idSong)) . substr($fullList, strpos($fullList, $idSong)+11, strlen($fullList));
+                        $newList = str_replace("[,", "[", $newList);
+                        $newList = str_replace(",,", ",", $newList);
+                        $newList = str_replace(",]", "]", $newList);
+                        $deletedResult = $this->list->borrarCancion($_SESSION['pname'], $newList);
                         echo json_encode($result);
                         break;
                 }

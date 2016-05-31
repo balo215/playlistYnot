@@ -21,4 +21,12 @@ class renderViewController{
         return $template;
     }
 
+    function processView($view){
+        $view = str_replace("{USER}", $_SESSION['email'], $view);
+        $header = file_get_contents("views/headerT.html");
+        $footer = file_get_contents("views/footer.html");
+        $view = $header.$view.$footer;
+        return $view;
+    }
+
 }

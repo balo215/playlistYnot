@@ -1,6 +1,3 @@
-<?php
-    include_once "header.html";
-?>
             <div class="row">
                 <aside class="col-md-2 col-lg-2">
                     <div class="panel panel-primary">
@@ -43,6 +40,3 @@
             </div>
         </div>   
     </body>
-<?php
-    require_once "footer.html";
-?>

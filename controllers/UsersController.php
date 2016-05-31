@@ -24,6 +24,9 @@
                 if($action == "logForm"){
                     echo $this->processTemplate('views/logIn.php', '[]');
                 }
+                if($action == "signForm"){
+                    echo $this->processTemplate("views/signUp.php", "[]");
+                }
                 if($action == "login"){
                     if (!isset($_REQUEST['email']) && !isset($_REQUEST['pass'])) {
                     } else {
@@ -45,9 +48,45 @@
                 if($action == "sign"){
                     $insert = $this->users->sign($_POST);
                     if($insert != false){
-                        echo $this->processTemplate('index.php', "[]");
+                        header('Location: index.php');
                     }
                     
+                }
+                if($action == "userLists"){
+                    $email = $_SESSION['email'];
+                    $lists = $this->users->getLists($email);
+                    $view = file_get_contents("views/newList.php");
+                    $start = strrpos($view, '<tr>');
+                    $end = strrpos($view, '</tr>')+5;
+
+                    $row = substr($view, $start, $end-$start);
+                    $rows = "";
+                    foreach($lists as $single){
+                        $new_row = $row;
+                        $dic = array('{{NAME}}' => $single['nombre'],
+                                     '{{DATE}}' => $single['fechaMod'],
+                                       '{{ID}}' => $single['id']);
+
+                        $new_row = strtr($new_row, $dic);
+                        $rows .= $new_row;
+                    }
+                    $view = str_replace($row,$rows, $view);
+
+                    echo $this->processView($view);
+                }
+
+                if($action == "deletePlaylist"){
+                    $idSong = $_REQUEST['id'];
+                    $result = $this->users->deletePlaylist($idSong);
+                    echo $result;
+                }
+                if($action == "deleteUser"){
+                    $email = $_SESSION['email'];
+                    $result = $this->users->deleteUser($email);
+                    $_SESSION = array();
+                    session_destroy();
+                    echo $result;
+                    header('Location: index.php');
                 }
    
 /*            if(isset($_SESSION) && isset($_SESSION['logued'])){

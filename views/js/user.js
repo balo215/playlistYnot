@@ -31,7 +31,7 @@ document.getElementById("processSignIn").addEventListener("click", function(){
             })
 
     }else{
-        $.post( "../index.php?controller=user&action=sign",
+        $.post( "/playlistYnot/index.php?controller=user&action=sign",
                 some,
                 function(data){
                     $("html").html(data);

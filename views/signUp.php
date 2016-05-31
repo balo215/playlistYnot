@@ -1,6 +1,3 @@
-<?php 
-    require_once "header.html";
-?>
             <div class="row">
                 <aside id="reasons" class="col-md-5 col-lg-5">
                     <div>
@@ -48,8 +45,5 @@
             </div>
         </div>   
     </body>
-<script src="js/validate.js"></script>
-<script src="js/user.js"></script>
-<?php
-    require_once "footer.html";
-?>
+<script src="views/js/validate.js"></script>
+<script src="views/js/user.js"></script>
